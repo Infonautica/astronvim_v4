@@ -11,6 +11,7 @@ return {
         "lua_ls",
         "ts_ls",
         "eslint",
+        "volar", -- vue-language-server
       },
     },
   },
