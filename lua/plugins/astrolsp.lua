@@ -45,7 +45,22 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      ts_ls = {
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "/Users/leoniddanilov/.nodenv/versions/20.17.0/lib/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "vue",
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -54,24 +69,6 @@ return {
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      ts_ls = function(_, opts)
-        require("lspconfig").ts_ls.setup {
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = "/Users/leoniddanilov/.nodenv/versions/20.17.0/lib/node_modules/@vue/typescript-plugin",
-                languages = { "javascript", "typescript", "vue" },
-              },
-            },
-          },
-          filetypes = {
-            "javascript",
-            "typescript",
-            "vue",
-          },
-        }
-      end, -- or a custom handler function can be passed
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
