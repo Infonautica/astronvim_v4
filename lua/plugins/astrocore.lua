@@ -55,6 +55,12 @@ return {
         --   desc = "Previous buffer",
         -- },
 
+        -- These keys will be used by window manager
+        ["<C-S-h>"] = { "<Nop>" },
+        ["<C-S-j>"] = { "<Nop>" },
+        ["<C-S-k>"] = { "<Nop>" },
+        ["<C-S-l>"] = { "<Nop>" },
+
         -- mappings seen under group name "Buffer"
         ["<leader>bD"] = {
           function()
