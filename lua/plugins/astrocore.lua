@@ -60,6 +60,7 @@ return {
         ["<C-S-j>"] = { "<Nop>" },
         ["<C-S-k>"] = { "<Nop>" },
         ["<C-S-l>"] = { "<Nop>" },
+        ["<C-S-m>"] = { "<Nop>" },
 
         -- mappings seen under group name "Buffer"
         ["<leader>bD"] = {
